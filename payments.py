@@ -1,10 +1,12 @@
 from faker import Factory
-from sends_messages import send_simple_message
 
 from nameko.events import EventDispatcher, event_handler
 from nameko.timer import timer
+import requests
 
 fake = Factory.create()
+
+payment_details = {}
 
 class PaymentService(object):
     name = "payments"
