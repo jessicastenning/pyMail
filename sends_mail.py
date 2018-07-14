@@ -10,7 +10,7 @@ class SendsMail:
     def handle_event(self, payload):
         print("payment received:", payload)
         return requests.post(
-            "https://api.mailgun.net/v3/sandboxdedb99c3ee804ecfa3a0f88a4b12a074.mailgun.org/messages",
+            "https://api.mailgun.net/v3/sandbox755e3e3d474a4b218e031f7213467c79.mailgun.org/messages",
             auth=("api", "7f0ee52f26f4a4ef8328e1195556c961-8b7bf2f1-1a549565"),
             data={"from": "jessicastenning@gmail.com",
                 "to": "jessicalstenning@gmail.com",
