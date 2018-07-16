@@ -2,7 +2,7 @@ from nameko.testing.services import worker_factory
 import requests
 from mock import patch, Mock
 from sends_mail import SendsMail
-from constants import API_KEY, EMAIL
+from constants import API_KEY, EMAIL, DOMAIN
 
 
 @patch('requests.post')
@@ -22,7 +22,7 @@ def test_handle_event_calls_requests_post_with_correct_data(mock_requests_post):
     service.handle_event(mock_payload)
 
     requests.post.assert_called_once_with(
-        "https://api.mailgun.net/v3/sandboxfd9d9e35309b4ac0aa3d495a45803837.mailgun.org/messages",
+        DOMAIN,
         auth = ('api', API_KEY),
         data = {
             "from": EMAIL,

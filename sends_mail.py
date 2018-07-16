@@ -1,5 +1,5 @@
 from nameko.events import event_handler
-from constants import API_KEY, EMAIL
+from constants import API_KEY, EMAIL, DOMAIN
 import payments
 import requests
 
@@ -11,7 +11,7 @@ class SendsMail:
     def handle_event(self, payload):
         print("payment received:", payload)
         return requests.post(
-            "https://api.mailgun.net/v3/sandboxfd9d9e35309b4ac0aa3d495a45803837.mailgun.org/messages",
+            DOMAIN,
             auth=("api", API_KEY),
             data = self.format_response_func(payload))
 
