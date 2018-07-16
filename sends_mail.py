@@ -14,6 +14,7 @@ class SendsMail:
             auth=("api", "5ff5b93ffdea5568338776eaf366f060-8b7bf2f1-17f4b7c0"),
             data = self.format_response_func(payload))
 
+
     def format_response_func(self,payload):
             return {
                 "from": "jessicalstenning@gmail.com",

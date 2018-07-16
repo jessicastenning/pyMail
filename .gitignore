@@ -1,2 +1,4 @@
 payments.pyc
 sends_mail.pyc
+_pycache_/
+.pytest_cache/
