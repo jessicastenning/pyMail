@@ -2,6 +2,7 @@ from nameko.testing.services import worker_factory
 import requests
 from mock import patch, Mock
 from sends_mail import SendsMail
+from constants import API_KEY, EMAIL
 
 
 @patch('requests.post')
@@ -21,11 +22,11 @@ def test_handle_event_calls_requests_post_with_correct_data(mock_requests_post):
     service.handle_event(mock_payload)
 
     requests.post.assert_called_once_with(
-        "https://api.mailgun.net/v3/sandbox755e3e3d474a4b218e031f7213467c79.mailgun.org/messages",
-        auth = ('api', '5ff5b93ffdea5568338776eaf366f060-8b7bf2f1-17f4b7c0'),
+        "https://api.mailgun.net/v3/sandboxfd9d9e35309b4ac0aa3d495a45803837.mailgun.org/messages",
+        auth = ('api', API_KEY),
         data = {
-            "from": "jessicalstenning@gmail.com",
-            "to": "jessicalstenning@gmail.com",
+            "from": EMAIL,
+            "to": EMAIL,
             "subject": "Payment received",
             "text": ("""
                     Dear mock_name,
@@ -48,8 +49,8 @@ def test_format_response_output():
     print(SendsMail().format_response_func(mock_data))
 
     assert SendsMail().format_response_func(mock_data) == {
-        "from": "jessicalstenning@gmail.com",
-        "to": "jessicalstenning@gmail.com",
+        "from": EMAIL,
+        "to": EMAIL,
         "subject": "Payment received",
             "text": ("""
                     Dear Kris,

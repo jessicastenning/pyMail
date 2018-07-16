@@ -3,3 +3,4 @@ sends_mail.pyc
 test_sends_mail.pyc
 _pycache_/
 .pytest_cache/
+constants.pyc
