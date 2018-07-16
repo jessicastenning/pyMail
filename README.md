@@ -79,4 +79,4 @@ pytest test_sends_mail.py
 ### Areas for continued improvement
 Due to my unfamiliarity with Python/Namkeo/Pytest, I found the testing aspect of this test the most challenging/time consuming - had I had more time to complete my program I'd have liked to have continued to implement more rigorous tests, and include error messages etc. 
 
-Given the time frame, I decided to focus on successfullt mocking/testing my handle event function as I felt this was the most challenging and therefore best demonstrated technical ability. 
+Given the time frame, I decided to focus on successfully mocking/testing my handle event function, as I felt this was the most challenging and therefore best demonstrated technical ability. 
