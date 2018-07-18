@@ -30,6 +30,9 @@ PyMail uses mailgun to send emails. In order to get this service running locally
 
 https://www.mailgun.com/
 
+
+### Updating constants.py
+
 You will then need to update the information in the constants file (API key, email, and domain) for your own Mailgun account information. All of these can be found on your main mailgun dashboard.
 
 The your domain will be in the following format:
@@ -53,11 +56,11 @@ nameko run payments
 
 As long as both services are running, pyMail will continue to send out payment confirmation emails for each event, including the information supplied by Faker.
 
-Every time an event occurs, the sends_mail terminal will print the information received from payments, and send an email via mailgun - similar to the following: 
+Every time an event occurs, the sends_mail terminal will print the information received from payments, and send an email via mailgun - similar to the following:
 ```
 Connected to amqp://guest:**@127.0.0.1:5672//
 ('payment received:', {u'payee': {u'name': u'Deborah Bennett', u'email': u'tmcgee@example.com'},
-u'client': {u'name': u'Brett Garcia', u'email': u'juarezyolanda@example.com'}, u'payment': 
+u'client': {u'name': u'Brett Garcia', u'email': u'juarezyolanda@example.com'}, u'payment':
 {u'currency': u'EUR', u'amount': 5188}})
 ```
 Example email:
@@ -70,12 +73,11 @@ Yours,
 
 Student.com
 ```
-### Testing 
+### Testing
 
-Pytest was used for testing. 
+Pytest was used for testing.
 
-To run pytest from your terminal write the following command: 
+To run pytest from your terminal write the following command:
 ```
 pytest test_sends_mail.py
 ```
-
